@@ -1,4 +1,6 @@
-import * as firebase from 'firebase';
+import firebase from "firebase/app";
+require('firebase/database');
+
 const config = {
     apiKey: "AIzaSyAzomKD6zL7mKqMeB4QtI5RgtPaOjKTIAA",
     authDomain: "arduino-alarm-e7e74.firebaseapp.com",
@@ -10,6 +12,5 @@ const config = {
 };
 
 firebase.initializeApp(config);
-export const databaseRef = firebase.database().ref();
-export const ledRef = databaseRef.child("ledStatus");
-export const alarmRef = databaseRef.child("alarmActivated");
+export default firebase;
+export const database = firebase.database();
